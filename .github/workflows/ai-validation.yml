@@ -1,0 +1,19 @@
+name: AI Factory Validation
+
+on: [push, pull_request]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install reportlab
+
+      - name: Run validators
+        run: python run.py
