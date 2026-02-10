@@ -1,5 +1,7 @@
 from validators.legal import validate_legal
 from validators.course import validate_course
+from validators.privacy_gdpr import validate_gdpr
+from validators.privacy_popia import validate_popia
 
 class ValidatorAgent:
     def validate(self, output, task):
