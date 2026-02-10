@@ -26,3 +26,5 @@ class Orchestrator:
             )
 
         raise Exception("Output failed validation after fixes")
+if not check_regression(task, output):
+    raise Exception("Regression detected – output changed unexpectedly")
